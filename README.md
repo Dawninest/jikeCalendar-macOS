@@ -32,28 +32,6 @@ headers: {
 }
 ```
 
-发现其
-
-```
-url: https://app.jike.ruguoapp.com/1.0/dailyCards/list?coordsys=wgs84&date=2019-03-27
-method: GET
-headers: {
-    x-jike-device-id: 'xxx',
-    x-jike-access-token: 'xxx',
-}
-```
-
-发现其
-
-```
-url: https://app.jike.ruguoapp.com/1.0/dailyCards/list?coordsys=wgs84&date=2019-03-27
-method: GET
-headers: {
-    x-jike-device-id: 'xxx',
-    x-jike-access-token: 'xxx',
-}
-```
-
 发现其 x-jike-access-token 是用于请求的关键JWT,但是十分钟更新一次
 
 遂找到其更新 JWT 接口
@@ -65,18 +43,6 @@ headers: {
 	// 10 mins 刷新一次
 	x-jike-access-token(新): ‘xxx’
 	x-jike-refresh-token(用于刷新请求的token): ‘xxx’
-}
-```
-
-解析其 
-
-```
-url: https://app.jike.ruguoapp.com/1.0/app_auth_tokens.refresh
-method: POST
-headers: {  
-    // 10 mins 刷新一次
-    x-jike-access-token(新): ‘xxx’
-    x-jike-refresh-token(用于刷新请求的token): ‘xxx’
 }
 ```
 
