@@ -5,7 +5,7 @@
 
 ------
 
-<img style="width:375px" src="./readSupport/00.jpg" />
+<img style="width:375px,height:535px" src="./readSupport/00.jpg" />
 
 如图所示,是 即刻 的探索页日历
 
@@ -41,7 +41,7 @@ todo list:
 
 初版logo大约这个样子
 
-<img style="width:200px" src="./readSupport/02.jpg" />
+<img style="width:200px, height:200px" src="./readSupport/02.jpg" />
 
 想当年我大三出去找实习的时候,还是一名UI,但是不信那些🐶开发说我的设计做不出来,于是便转开发了.(其实是还是因为设计不符合开发规范)
 
