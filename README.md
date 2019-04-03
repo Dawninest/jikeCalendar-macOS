@@ -5,7 +5,7 @@
 
 ------
 
-<img style="width:375px,height:535px" src="./readSupport/00.jpg" />
+<img src="./readSupport/00.jpg" width=375 height=535/>
 
 如图所示,是 即刻 的探索页日历
 
