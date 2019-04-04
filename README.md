@@ -1,4 +1,3 @@
-# jikeCalendar-macOS-dock
 ## jikeCalendar in macOS dock
 
 ## 即刻黄历macOS Dock版
