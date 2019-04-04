@@ -37,7 +37,7 @@ class RecommedCell: NSView {
         recommedName.isEditable = false
         recommedName.isBordered = false
         recommedName.backgroundColor = jike_Y
-        recommedName.alignment = .right
+        recommedName.alignment = .left
         recommedName.font = NSFont.systemFont(ofSize: 12)
         recommedName.textColor = NSColor(red:0.60, green:0.53, blue:0.09, alpha:1.00)
         

@@ -177,10 +177,7 @@ class MainBackView: NSView {
         
         self.addSubview(bottomBar)
     }
-    
-    @objc func jump () {
-        print("1111")
-    }
+
     
     @objc func exitApp () {
         // 退出

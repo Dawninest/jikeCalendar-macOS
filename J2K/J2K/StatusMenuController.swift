@@ -22,7 +22,12 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     override func awakeFromNib() {
-        statusItem.button?.title = "J2K"
+        //statusItem.button?.title = "J2K"
+        
+        let icon = NSImage.init(named: "j2k")
+        icon?.isTemplate = true
+        statusItem.button!.image = icon
+        
         statusItem.menu = menuMain
         
         
