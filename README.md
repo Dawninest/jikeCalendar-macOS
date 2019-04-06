@@ -8,7 +8,7 @@
 
  项目名: j2k (顾名思义 jike want to kxx me)
 
-[点击下载]
+[[点击下载]](https://github.com/Dawninest/jikeCalendar-macOS-dock/releases/download/v1.0/J2K.zip)
 
 ------
 
@@ -48,7 +48,7 @@ todo list:
 
 上图
 
-<img src="./readSupport/07.jpg" width=100 height=100 />
+<img src="./readSupport/07.jpg" width=154 height=121 />
 
 <img src="./readSupport/04.jpg" width=300 height=300 />
 
