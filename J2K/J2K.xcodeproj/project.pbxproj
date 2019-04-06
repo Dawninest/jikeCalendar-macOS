@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA25B3A32258616E00738C6F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DA4F727F2253048E00E51540 /* J2K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = J2K.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA4F72822253048E00E51540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA4F72842253049000E51540 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,11 +41,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA25B3A22258616D00738C6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA25B3A32258616E00738C6F /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA4F72762253048E00E51540 = {
 			isa = PBXGroup;
 			children = (
 				DA4F72812253048E00E51540 /* J2K */,
 				DA4F72802253048E00E51540 /* Products */,
+				DA25B3A22258616D00738C6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +115,9 @@
 					DA4F727E2253048E00E51540 = {
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 0;
 							};

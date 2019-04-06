@@ -11,15 +11,14 @@ import Cocoa
 class ConnectTool {
     
     let refreshUrl = "https://app.jike.ruguoapp.com/1.0/app_auth_tokens.refresh" // POST
-    let refreshJWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiQnZZSmFwckg0QlQ1ZEJudWY0NUtWWU50cFB1WkFqKzVSMWtnb3pBNDVTTEhlXC9xdSt2QitvXC83SXh3cWI4STRvYXZqaStkcG5JZXF5WFFPZzdZZ1J3SHhGMDBPVTBPRytDbnRlTHl1OFJabkhLRk5qNG9QY3JXbUExRDlcL3gxa3NhdUVDa3dybjRhUTFQXC9nTmkyVnRZT0FzcEE2TUh3K2NFZHVHczdLYllVVT0iLCJ2IjozLCJpdiI6ImVHcjlBTEFJdTZrak1LK3krUzVMXC9nPT0iLCJpYXQiOjE1NTQxMDA2MTkuMzk2fQ.NedeubfCaKjlA4qPNfEMbY10WrmxUClfvrA10kzBk40"
     let dailyDataUrl = "https://app.jike.ruguoapp.com/1.0/dailyCards/list" // GET
     
-    func getDataJWT (success: @escaping (String) -> Void) {
+    func getDataJWT (_ refreshToken: String, success: @escaping (String) -> Void, fail: @escaping () -> Void) {
         let session = URLSession(configuration: .default)
         let url = NSURL(string: refreshUrl)
         var request = URLRequest(url: url! as URL)
         request.httpMethod = "POST"
-        request.addValue(refreshJWT, forHTTPHeaderField: "x-jike-refresh-token")
+        request.addValue(refreshToken, forHTTPHeaderField: "x-jike-refresh-token")
         let task = session.dataTask(with: request) {(data, response, error) in
             do {
                 let JWTData = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
@@ -27,6 +26,7 @@ class ConnectTool {
                 success(jwt)
             } catch {
                 print("无法连接到服务器")
+                fail()
                 return
             }
         }
@@ -51,5 +51,81 @@ class ConnectTool {
         task.resume()
         
     }
+    
+    func getQRUUID (success: @escaping (String) -> Void) {
+        let urlStr = "https://app.jike.ruguoapp.com/sessions.create"
+        let session = URLSession(configuration: .default)
+        let url = NSURL(string: urlStr)
+        let request = URLRequest(url: url! as URL)
+        let task = session.dataTask(with: request) {(data, response, error) in
+            do {
+                let uuidData = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary as! Dictionary<String, Any>
+                let uuid: String = uuidData["uuid"] as! String
+                success(uuid)
+            } catch {
+                print("无法连接到服务器")
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    func waitingforLogin (uuid: String, success: @escaping () -> Void, fail: @escaping () -> Void) {
+        // 未登录204, 登录200, 超时xx
+        let urlStr = "https://app.jike.ruguoapp.com/sessions.wait_for_login?uuid=\(uuid)"
+        let session = URLSession(configuration: .default)
+        let url = NSURL(string: urlStr)
+        let request = URLRequest(url: url! as URL)
+        let task = session.dataTask(with: request) {(data, response, error) in
+            do {
+                let res = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary as! Dictionary<String, Any>
+                let logged_in: Int = res["logged_in"] as! Int
+                // logged_in == 1
+                if (logged_in == 1) {
+                    success()
+                }
+            } catch {
+                let res: HTTPURLResponse = response as! HTTPURLResponse
+                let code = res.statusCode
+                if (code == 204) {
+                    // 未登录,再次请求 waitingforLogin
+                    self.waitingforLogin(uuid: uuid,success: success, fail: fail);
+                } else {
+                    fail()
+                }
+                return
+            }
+           
+        }
+        task.resume()
+    }
+    
+    func waitingforConfirm (uuid: String, success: @escaping (String) -> Void, fail: @escaping () -> Void) {
+        let urlStr = "https://app.jike.ruguoapp.com/sessions.wait_for_confirmation?uuid=\(uuid)"
+        let session = URLSession(configuration: .default)
+        let url = NSURL(string: urlStr)
+        let request = URLRequest(url: url! as URL)
+        let task = session.dataTask(with: request) {(data, response, error) in
+            do {
+                let userdata = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary as! Dictionary<String, Any>
+                let refreshToken: String = userdata["x-jike-refresh-token"] as! String
+                success(refreshToken)
+            } catch {
+                print("无法连接到服务器")
+                let res: HTTPURLResponse = response as! HTTPURLResponse
+                let code = res.statusCode
+                if (code == 204) {
+                    // 未登录,再次请求 waitingforLogin
+                    self.waitingforConfirm(uuid: uuid,success: success, fail: fail);
+                } else {
+                    fail()
+                }
+                return
+            }
+        }
+        task.resume()
+    }
+    
+    
     
 }
