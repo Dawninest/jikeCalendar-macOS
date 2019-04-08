@@ -16,15 +16,15 @@
 
 上图
 
-<img src="/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS/readSupport/07.jpg" width=154 height=121 />
+<img src="./readSupport/07.jpg" width=154 height=121 />
 
-<img src="/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS/readSupport/04.jpg" width=300 height=300 />
+<img src="./readSupport/04.jpg" width=300 height=300 />
 
-<img src="/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS/readSupport/05.jpg" width=300 height=300 />
+<img src="./readSupport/05.jpg" width=300 height=300 />
 
 甚至适配了系统暗黑模式! [吾,响应了那来自黑暗的力量啊]
 
-<img src="/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS/readSupport/06.jpg" width=300 height=300 />
+<img src="./readSupport/06.jpg" width=300 height=300 />
 
 会保存一个扫码拿到的请求数据token到 /用户名/文稿/j2k.txt 中
 
@@ -34,7 +34,7 @@
 
 定版了logo,现在大约这个样子
 
-<img src="/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS/readSupport/03.jpg" width=300 height=300 />
+<img src="./readSupport/03.jpg" width=300 height=300 />
 
 想了很久,还是觉得接受不了看个日历还得打开即刻App扫码登录,琢磨了一下,还是打算自己整个地方存放自己的验证(并定期更新),具体实现及细节还得调整
 
@@ -42,7 +42,7 @@
 
 初版logo大约这个样子
 
-<img src="/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS/readSupport/02.jpg" width=200 height=200 />
+<img src="./readSupport/02.jpg" width=200 height=200 />
 
 想当年我大三出去找实习的时候,还是一名UI,但是不信那些🐶开发说我的设计做不出来,于是便转开发了.(其实是还是因为设计不符合开发规范)
 
@@ -52,7 +52,7 @@
 
 基本功能完成,界面如图
 
-![](/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS/readSupport/01.jpg)
+![](./readSupport/01.jpg)
 
 ### 2019-4-1 - 第三次尝试
 
