@@ -6,6 +6,8 @@
 
 <img src="./readSupport/j2k128.png" width=128 height=128/>
 
+<img src="./readSupport/08.jpg" width=282 height=468/>
+
  项目名: j2k (顾名思义 jike want to kxx me)
 
 [[点击下载]](https://github.com/Dawninest/jikeCalendar-macOS-dock/releases/download/v1.0/J2K.zip)
