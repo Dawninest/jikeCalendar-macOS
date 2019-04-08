@@ -1,10 +1,10 @@
 ## jikeCalendar in macOS
 
-## 即刻黄历macOS Dock
+## 即刻黄历macOS Dock <img src="./readSupport/j2k128.png" width=24 height=24/>
 
 ------
 
-<img src="./readSupport/j2k128.png" width=128 height=128/>
+
 
 <img src="./readSupport/08.jpg" width=282 height=468/>
 
