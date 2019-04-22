@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DAC98A32225B215D00D75C84 /* Build configuration list for PBXProject "j2k-saver" */;
+			buildConfigurationList = DAC98A32225B215D00D75C84 /* Build configuration list for PBXProject "J2K-saver" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -300,7 +300,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAC98A32225B215D00D75C84 /* Build configuration list for PBXProject "j2k-saver" */ = {
+		DAC98A32225B215D00D75C84 /* Build configuration list for PBXProject "J2K-saver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAC98A40225B215D00D75C84 /* Debug */,

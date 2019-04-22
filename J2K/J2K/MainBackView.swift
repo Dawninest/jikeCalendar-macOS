@@ -14,7 +14,7 @@ class MainBackView: NSView {
     let height: CGFloat = 620 * 0.75
     let calenderHeight: CGFloat = 620 * 0.75 * 0.9
     let topStart: CGFloat = 620 * 0.75 * 0.1
-    let jike_Y = NSColor(red:0.98, green:0.89, blue:0.31, alpha:1.00) // FFE411
+    let jike_Y = NSColor(red:1, green:0.894, blue:0.066, alpha:1.00) // FFE411
     let font_color = NSColor(red:0.25, green:0.25, blue:0.25, alpha:1.00)
     
     var friTip = NSTextField() // 显示今天是否是周五
@@ -180,7 +180,7 @@ class MainBackView: NSView {
         let fortune: String = daily["fortune"] as! String
         let featuredContent: Dictionary<String,Any> = daily["featuredContent"] as! Dictionary<String,Any>
         let recommedDes: String = featuredContent["text"] as! String
-        let recommedName: String = featuredContent["author"] as! String
+        let recommedName: String = featuredContent["author"] == nil ? "" : (featuredContent["author"] as! String)
         let url: String = featuredContent["url"] as! String
         let greetings: Dictionary<String,Any> = daily["greetings"] as! Dictionary<String,Any>
         let userName: String = self.getUserName(greetings["firstLine"] as! String)
@@ -188,7 +188,9 @@ class MainBackView: NSView {
         DispatchQueue.main.sync {
             self.fortuneLine.stringValue = fortune
             self.recommedView.recommedDes.stringValue = recommedDes
-            self.recommedView.recommedName.stringValue = "via \(recommedName)"
+            if (recommedName != "") {
+                self.recommedView.recommedName.stringValue = "via \(recommedName)"
+            }
             self.recommedView.url = url
             self.userName.stringValue = userName
             self.userLv.stringValue = userLv
