@@ -176,26 +176,27 @@ class MainBackView: NSView {
     
     func updateData(_ data: Dictionary<String, Any>) {
         let cardData: Array<Any> = data["cards"] as! Array<Any>
-        let daily: Dictionary<String, Any> = cardData[0] as! Dictionary<String, Any>
-        let fortune: String = daily["fortune"] as! String
-        let featuredContent: Dictionary<String,Any> = daily["featuredContent"] as! Dictionary<String,Any>
-        let recommedDes: String = featuredContent["text"] as! String
-        let recommedName: String = featuredContent["author"] == nil ? "" : (featuredContent["author"] as! String)
-        let url: String = featuredContent["url"] as! String
-        let greetings: Dictionary<String,Any> = daily["greetings"] as! Dictionary<String,Any>
-        let userName: String = self.getUserName(greetings["firstLine"] as! String)
-        let userLv: String = greetings["secondLine"] as! String
-        DispatchQueue.main.sync {
-            self.fortuneLine.stringValue = fortune
-            self.recommedView.recommedDes.stringValue = recommedDes
-            if (recommedName != "") {
-                self.recommedView.recommedName.stringValue = "via \(recommedName)"
+        if cardData.count > 0 {
+            let daily: Dictionary<String, Any> = cardData[0] as! Dictionary<String, Any>
+            let fortune: String = daily["fortune"] as! String
+            let featuredContent: Dictionary<String,Any> = daily["featuredContent"] as! Dictionary<String,Any>
+            let recommedDes: String = featuredContent["text"] as! String
+            let recommedName: String = featuredContent["author"] == nil ? "" : (featuredContent["author"] as! String)
+            let url: String = featuredContent["url"] as! String
+            let greetings: Dictionary<String,Any> = daily["greetings"] as! Dictionary<String,Any>
+            let userName: String = self.getUserName(greetings["firstLine"] as! String)
+            let userLv: String = greetings["secondLine"] as! String
+            DispatchQueue.main.sync {
+                self.fortuneLine.stringValue = fortune
+                self.recommedView.recommedDes.stringValue = recommedDes
+                if (recommedName != "") {
+                    self.recommedView.recommedName.stringValue = "via \(recommedName)"
+                }
+                self.recommedView.url = url
+                self.userName.stringValue = userName
+                self.userLv.stringValue = userLv
             }
-            self.recommedView.url = url
-            self.userName.stringValue = userName
-            self.userLv.stringValue = userLv
         }
-        
     }
     
     func getUserName(_ str: String) -> String {

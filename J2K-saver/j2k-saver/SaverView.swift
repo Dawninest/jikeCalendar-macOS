@@ -169,16 +169,16 @@ final class SaverView: ScreenSaverView {
     
     func updateData (_ data: Dictionary<String, Any>) {
         let cardData: Array<Any> = data["cards"] as! Array<Any>
-        let daily: Dictionary<String, Any> = cardData[0] as! Dictionary<String, Any>
-        let fortune: String = daily["fortune"] as! String
-        let featuredContent: Dictionary<String,Any> = daily["featuredContent"] as! Dictionary<String,Any>
-        let recommedDes: String = featuredContent["text"] as! String
-        DispatchQueue.main.sync {
-            self.canDoText.stringValue = fortune
-            self.sdfText.stringValue = recommedDes
+        if cardData.count > 0 {
+            let daily: Dictionary<String, Any> = cardData[0] as! Dictionary<String, Any>
+            let fortune: String = daily["fortune"] as! String
+            let featuredContent: Dictionary<String,Any> = daily["featuredContent"] as! Dictionary<String,Any>
+            let recommedDes: String = featuredContent["text"] as! String
+            DispatchQueue.main.sync {
+                self.canDoText.stringValue = fortune
+                self.sdfText.stringValue = recommedDes
+            }
         }
-        
-        
     }
     
     override func animateOneFrame() {
@@ -201,7 +201,10 @@ final class SaverView: ScreenSaverView {
         let week = weekArr[theComponents.weekday! - 1]
         
         
-        let hour: Int = theComponents.hour!
+       
+        let hourStr = theComponents.hour!.description
+        let hour = theComponents.hour! < 10 ? "0\(hourStr)" : hourStr
+        
         let minStr = theComponents.minute!.description
         let min = theComponents.minute! < 10 ? "0\(minStr)" : minStr
         

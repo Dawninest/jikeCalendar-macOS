@@ -47,6 +47,8 @@ todo list:
 
 下载:    [[点击下载]](https://github.com/Dawninest/jikeCalendar-macOS/releases/download/v2.0/J2K.zip)
 
+要求macOS版本 10.11及以上
+
 屏保安装说明:  双击 j2k.saver 将自动添加至屏保列表中,合理配置屏保触发角可更加方便快捷使用
 
 ------
