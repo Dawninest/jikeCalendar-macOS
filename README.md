@@ -20,9 +20,9 @@
 
 人家不想在屏保中做扫码登录了嘛
 
-效果图大约是这样,macOS 没法截图屏保,我也很绝望啊
+4.28 修复了在大屏幕和多屏幕显示的BUG,现在效果图是这样(macOS 没法截图屏保)
 
-<img src="./readSupport/saver.jpeg" width=400 height=300/>
+<img src="./readSupport/saver.jpeg" width=300 height=400/>
 
 ------
 
@@ -37,13 +37,13 @@ star越多,我敲代码的手就越快[死不要脸求star]
 todo list:
 
 1. 指定场景/定时弹出(hard)
-2. saver 的多显示器兼容问题
+2. ~~saver 的多显示器兼容问题~~
 3. saver 的 macOS 支持问题(修改工程的Deployment Target 到 10.11 ,依然反馈不支持,怀疑是低版本macOS对Swift 5 的支持问题,如果需要用OC或低版本Swift 重构的话,我可能不会处理这个问题)
 4. issues 反馈的崩溃问题跟踪
 
 ------
 
-下载:    [[点击下载]](https://github.com/Dawninest/jikeCalendar-macOS/releases/download/v2.0/J2K.zip)
+下载:    [[点击下载]](https://github.com/Dawninest/jikeCalendar-macOS/releases/download/v1.2/J2K.zip) (v1.2)
 
 要求macOS版本 10.11及以上
 
