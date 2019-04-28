@@ -40,6 +40,7 @@ todo list:
 2. ~~saver 的多显示器兼容问题~~
 3. saver 的 macOS 支持问题(修改工程的Deployment Target 到 10.11 ,依然反馈不支持,怀疑是低版本macOS对Swift 5 的支持问题,如果需要用OC或低版本Swift 重构的话,我可能不会处理这个问题)
 4. issues 反馈的崩溃问题跟踪
+5. saver貌似比dock版要好用和实用得多,后续考虑将saver独立出来,不再强制需要打开dock版进行登录,将登陆功能集成进saver中(锁屏壁纸设置),
 
 ------
 
