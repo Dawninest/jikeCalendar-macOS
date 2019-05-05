@@ -14,7 +14,7 @@
 
 效果图是这样(macOS 没法截图屏保)
 
-<img src="/Users/Dawninest/Desktop/j2k/jikeCalendar-macOS-dock/readSupport/saver.jpeg" width=300 height=400/>
+<img src="./readSupport/saver.jpeg" width=300 height=400/>
 
 ------
 
