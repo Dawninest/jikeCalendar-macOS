@@ -184,7 +184,7 @@ final class SaverView: ScreenSaverView {
         let refreshToken = self.readRefreshToken()
         self.sdfText.stringValue = "..."
         self.getDataJWT(refreshToken, success: {(jwt) in
-            self.sdfText.stringValue = jwt
+            
             self.getDailyData(jwt, success: {(data) in
                 self.updateData(data)
             })
