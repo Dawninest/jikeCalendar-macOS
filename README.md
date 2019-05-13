@@ -47,7 +47,7 @@ todo list:
 
 ------
 
-下载:    [[点击下载]](https://github.com/Dawninest/jikeCalendar-macOS/releases/download/v1.3/J2K.zip) (v1.3)
+下载:    [[点击下载]](https://github.com/Dawninest/jikeCalendar-macOS/releases/download/v1.3.1/J2K.zip) (v1.3.1)
 
 要求macOS版本 10.11及以上
 

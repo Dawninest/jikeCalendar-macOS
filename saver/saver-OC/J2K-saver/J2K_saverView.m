@@ -261,7 +261,7 @@
 }
 
 - (NSString*) timeAddZero:(NSInteger) timeNum {
-    if (timeNum > 10) {
+    if (timeNum >= 10) {
         return [NSString stringWithFormat: @"%ld", (long)timeNum];
     } else {
         return [NSString stringWithFormat: @"0%ld", (long)timeNum];
