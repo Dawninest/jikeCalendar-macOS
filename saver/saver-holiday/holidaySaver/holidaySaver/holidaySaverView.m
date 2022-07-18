@@ -266,23 +266,23 @@
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-            NSString *workTime =  dict[@"workTime"];
+//            NSString *workTime =  dict[@"workTime"];
             NSArray *holidayList = dict[@"data"];
             dispatch_sync(dispatch_get_main_queue(), ^{
-                self.canDoText.stringValue = workTime;
-                    int dataCount = [holidayList count];
-                    if (dataCount >= 1) {
-                        self.holidayOne.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[0][@"name"], holidayList[0][@"length"],holidayList[0][@"fromNow"]];
-                    }
-                    if (dataCount >= 2) {
-                        self.holidayTwo.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[1][@"name"], holidayList[1][@"length"],holidayList[1][@"fromNow"]];
-                    }
-                    if (dataCount >= 3) {
-                        self.holidayThree.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[2][@"name"], holidayList[2][@"length"],holidayList[2][@"fromNow"]];
-                    }
-                    if (dataCount >= 4) {
-                        self.holidayFour.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[3][@"name"], holidayList[3][@"length"],holidayList[3][@"fromNow"]];
-                    }
+//                self.canDoText.stringValue = workTime;
+                int dataCount = [holidayList count];
+                if (dataCount >= 1) {
+                    self.holidayOne.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[0][@"name"], holidayList[0][@"length"],holidayList[0][@"fromNow"]];
+                }
+                if (dataCount >= 2) {
+                    self.holidayTwo.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[1][@"name"], holidayList[1][@"length"],holidayList[1][@"fromNow"]];
+                }
+                if (dataCount >= 3) {
+                    self.holidayThree.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[2][@"name"], holidayList[2][@"length"],holidayList[2][@"fromNow"]];
+                }
+                if (dataCount >= 4) {
+                    self.holidayFour.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[3][@"name"], holidayList[3][@"length"],holidayList[3][@"fromNow"]];
+                }
             });
         } else {
             NSLog(@"%@",error);
