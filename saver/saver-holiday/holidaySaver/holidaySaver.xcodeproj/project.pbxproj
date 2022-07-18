@@ -9,12 +9,23 @@
 /* Begin PBXBuildFile section */
 		0FCA8BB3288511DE00C5E873 /* holidaySaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FCA8BB2288511DE00C5E873 /* holidaySaverView.h */; };
 		0FCA8BB5288511DE00C5E873 /* holidaySaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA8BB4288511DE00C5E873 /* holidaySaverView.m */; };
+		0FCA8BC128854E8700C5E873 /* LanaPixel.md in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA8BBC28854E8700C5E873 /* LanaPixel.md */; };
+		0FCA8BC228854E8700C5E873 /* controllerbuttons.html in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA8BBD28854E8700C5E873 /* controllerbuttons.html */; };
+		0FCA8BC328854E8700C5E873 /* LanaPixel_CC-BYLicense.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA8BBE28854E8700C5E873 /* LanaPixel_CC-BYLicense.txt */; };
+		0FCA8BC428854E8700C5E873 /* LanaPixel_OpenFontLicense.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA8BBF28854E8700C5E873 /* LanaPixel_OpenFontLicense.txt */; };
+		0FCA8BC528854E8700C5E873 /* LanaPixel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA8BC028854E8700C5E873 /* LanaPixel.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FCA8BAF288511DE00C5E873 /* holidaySaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = holidaySaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCA8BB2288511DE00C5E873 /* holidaySaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = holidaySaverView.h; sourceTree = "<group>"; };
 		0FCA8BB4288511DE00C5E873 /* holidaySaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = holidaySaverView.m; sourceTree = "<group>"; };
+		0FCA8BBC28854E8700C5E873 /* LanaPixel.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LanaPixel.md; sourceTree = "<group>"; };
+		0FCA8BBD28854E8700C5E873 /* controllerbuttons.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = controllerbuttons.html; sourceTree = "<group>"; };
+		0FCA8BBE28854E8700C5E873 /* LanaPixel_CC-BYLicense.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LanaPixel_CC-BYLicense.txt"; sourceTree = "<group>"; };
+		0FCA8BBF28854E8700C5E873 /* LanaPixel_OpenFontLicense.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LanaPixel_OpenFontLicense.txt; sourceTree = "<group>"; };
+		0FCA8BC028854E8700C5E873 /* LanaPixel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LanaPixel.ttf; sourceTree = "<group>"; };
+		0FCA8BC628854ED500C5E873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +58,25 @@
 		0FCA8BB1288511DE00C5E873 /* holidaySaver */ = {
 			isa = PBXGroup;
 			children = (
+				0FCA8BC628854ED500C5E873 /* Info.plist */,
+				0FCA8BBB28854E8700C5E873 /* LanaPixel */,
 				0FCA8BB2288511DE00C5E873 /* holidaySaverView.h */,
 				0FCA8BB4288511DE00C5E873 /* holidaySaverView.m */,
 			);
 			path = holidaySaver;
+			sourceTree = "<group>";
+		};
+		0FCA8BBB28854E8700C5E873 /* LanaPixel */ = {
+			isa = PBXGroup;
+			children = (
+				0FCA8BBC28854E8700C5E873 /* LanaPixel.md */,
+				0FCA8BBD28854E8700C5E873 /* controllerbuttons.html */,
+				0FCA8BBE28854E8700C5E873 /* LanaPixel_CC-BYLicense.txt */,
+				0FCA8BBF28854E8700C5E873 /* LanaPixel_OpenFontLicense.txt */,
+				0FCA8BC028854E8700C5E873 /* LanaPixel.ttf */,
+			);
+			name = LanaPixel;
+			path = ../../../font/LanaPixel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +148,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCA8BC528854E8700C5E873 /* LanaPixel.ttf in Resources */,
+				0FCA8BC428854E8700C5E873 /* LanaPixel_OpenFontLicense.txt in Resources */,
+				0FCA8BC228854E8700C5E873 /* controllerbuttons.html in Resources */,
+				0FCA8BC328854E8700C5E873 /* LanaPixel_CC-BYLicense.txt in Resources */,
+				0FCA8BC128854E8700C5E873 /* LanaPixel.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +287,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z6PY763ZB6;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = holidaySaver/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = holidaySaverView;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
@@ -275,6 +307,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z6PY763ZB6;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = holidaySaver/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPrincipalClass = holidaySaverView;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";

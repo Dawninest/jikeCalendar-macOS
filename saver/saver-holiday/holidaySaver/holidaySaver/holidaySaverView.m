@@ -126,7 +126,7 @@
         self.canDoText.editable = NO;
         self.canDoText.bordered = NO;
         self.canDoText.drawsBackground = NO;
-        self.canDoText.font = [NSFont systemFontOfSize:60];
+        self.canDoText.font = [NSFont fontWithName:@"LanaPixel" size:60];
         self.canDoText.textColor = jikeY;
         self.canDoText.alignment = NSTextAlignmentCenter;
         [self addSubview: self.canDoText];
@@ -266,10 +266,10 @@
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//            NSString *workTime =  dict[@"workTime"];
+            NSString *workTime =  dict[@"workTime"];
             NSArray *holidayList = dict[@"data"];
             dispatch_sync(dispatch_get_main_queue(), ^{
-//                self.canDoText.stringValue = workTime;
+                self.canDoText.stringValue = workTime;
                 int dataCount = [holidayList count];
                 if (dataCount >= 1) {
                     self.holidayOne.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[0][@"name"], holidayList[0][@"length"],holidayList[0][@"fromNow"]];
