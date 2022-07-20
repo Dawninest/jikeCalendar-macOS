@@ -38,6 +38,7 @@
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
     }
+    [self registerFont];
     [self initUI:frame];
     [self getDate];
     return self;
@@ -74,6 +75,25 @@
     return nil;
 }
 
+- (void)registerFont {
+    NSArray *pathArr = [[NSBundle mainBundle] pathsForResourcesOfType: @"ttf" inDirectory: @"font"];
+    for (int i = 0; i < pathArr.count; i ++) {
+        NSURL *fontURL = [[NSURL alloc] initWithString:pathArr[i]];
+        NSURL *urls[] = {fontURL};
+        CFArrayRef fontURLs = CFArrayCreate(kCFAllocatorDefault, (void *)urls, (CFIndex)1, NULL);
+        CTFontManagerRegisterFontURLs(fontURLs, kCTFontManagerScopePersistent, true, ^bool(CFArrayRef  _Nonnull errors, bool done) {
+                if (CFArrayGetCount(errors) > 0) {
+                    // regist failed
+                    CFErrorRef cfError = (CFErrorRef)CFArrayGetValueAtIndex(errors, 0);
+                    NSError *error = (__bridge_transfer NSError *)cfError;
+                    NSLog(@"Regist Font Failed: %@", [error localizedDescription]);
+                    return false;
+                }
+                return true;
+            });
+    }
+}
+
 - (void)initUI:(NSRect)rect {
     
     if (rect.size.width < 300 && rect.size.height < 200) {
@@ -86,7 +106,7 @@
         tipTitle.editable = NO;
         tipTitle.bordered = NO;
         tipTitle.drawsBackground = NO;
-        tipTitle.font = [NSFont systemFontOfSize:20];
+        tipTitle.font = [NSFont fontWithName:@"LanaPixel" size:20];
         tipTitle.textColor = jikeY;
         tipTitle.alignment = NSTextAlignmentCenter;
         tipTitle.stringValue = @"假期倒计时Mac屏保";
@@ -104,7 +124,7 @@
         tipText.editable = NO;
         tipText.bordered = NO;
         tipText.drawsBackground = NO;
-        tipText.font = [NSFont systemFontOfSize:12];
+        tipText.font = [NSFont fontWithName:@"LanaPixel" size:12];
         tipText.textColor = jikeY;
         tipText.alignment = NSTextAlignmentLeft;
         tipText.stringValue = @"注意:请勿点击下面的 '屏幕保护程序选项...' 按钮";
@@ -120,6 +140,8 @@
         CGFloat widthPadding = width * (1 - ratio) / 2;
         CGFloat lineHeight = height * (1 - ratio);
         
+        NSArray *fonts = [[NSFontManager sharedFontManager] availableFonts];
+        
        
         self.canDoText = [[NSTextField alloc] init];
         self.canDoText.frame = CGRectMake(widthPadding, lineHeight + 280, showWith, 80);
@@ -129,6 +151,7 @@
         self.canDoText.font = [NSFont fontWithName:@"LanaPixel" size:60];
         self.canDoText.textColor = jikeY;
         self.canDoText.alignment = NSTextAlignmentCenter;
+        self.canDoText.stringValue = fonts[984];
         [self addSubview: self.canDoText];
 
         self.daliyText = [[NSTextField alloc] init];
@@ -136,7 +159,7 @@
         self.daliyText.editable = NO;
         self.daliyText.bordered = NO;
         self.daliyText.drawsBackground = NO;
-        self.daliyText.font = [NSFont systemFontOfSize:30];
+        self.daliyText.font = [NSFont fontWithName:@"LanaPixel" size:30];
         self.daliyText.textColor = jikeY;
         self.daliyText.alignment = NSTextAlignmentCenter;
         [self addSubview: self.daliyText];
@@ -151,7 +174,7 @@
         self.dateNum_h.editable = NO;
         self.dateNum_h.bordered = NO;
         self.dateNum_h.drawsBackground = NO;
-        self.dateNum_h.font = [NSFont systemFontOfSize:180];
+        self.dateNum_h.font = [NSFont fontWithName:@"LanaPixel" size:180];
         self.dateNum_h.textColor = jikeY;
         self.dateNum_h.alignment = NSTextAlignmentCenter;
         [self.dateNumText addSubview: self.dateNum_h];
@@ -161,7 +184,7 @@
         dateSignOne.editable = NO;
         dateSignOne.bordered = NO;
         dateSignOne.drawsBackground = NO;
-        dateSignOne.font = [NSFont systemFontOfSize:180];
+        dateSignOne.font = [NSFont fontWithName:@"LanaPixel" size:180];
         dateSignOne.textColor = jikeY;
         dateSignOne.stringValue = @":";
         dateSignOne.alignment = NSTextAlignmentCenter;
@@ -172,7 +195,7 @@
         self.dateNum_m.editable = NO;
         self.dateNum_m.bordered = NO;
         self.dateNum_m.drawsBackground = NO;
-        self.dateNum_m.font = [NSFont systemFontOfSize:180];
+        self.dateNum_m.font = [NSFont fontWithName:@"LanaPixel" size:180];
         self.dateNum_m.textColor = jikeY;
         self.dateNum_m.alignment = NSTextAlignmentCenter;
         [self.dateNumText addSubview: self.dateNum_m];
@@ -182,7 +205,7 @@
         dateSignTwo.editable = NO;
         dateSignTwo.bordered = NO;
         dateSignTwo.drawsBackground = NO;
-        dateSignTwo.font = [NSFont systemFontOfSize:180];
+        dateSignTwo.font = [NSFont fontWithName:@"LanaPixel" size:180];
         dateSignTwo.textColor = jikeY;
         dateSignTwo.stringValue = @":";
         dateSignTwo.alignment = NSTextAlignmentCenter;
@@ -193,7 +216,7 @@
         self.dateNum_s.editable = NO;
         self.dateNum_s.bordered = NO;
         self.dateNum_s.drawsBackground = NO;
-        self.dateNum_s.font = [NSFont systemFontOfSize:180];
+        self.dateNum_s.font = [NSFont fontWithName:@"LanaPixel" size:180];
         self.dateNum_s.textColor = jikeY;
         self.dateNum_s.alignment = NSTextAlignmentCenter;
         [self.dateNumText addSubview: self.dateNum_s];
@@ -219,7 +242,7 @@
         self.holidayOne.editable = NO;
         self.holidayOne.bordered = NO;
         self.holidayOne.drawsBackground = NO;
-        self.holidayOne.font = [NSFont systemFontOfSize:36];
+        self.holidayOne.font = [NSFont fontWithName:@"LanaPixel" size:36];
         self.holidayOne.textColor = jikeY;
         self.holidayOne.alignment = NSTextAlignmentCenter;
         [self addSubview: self.holidayOne];
@@ -229,7 +252,7 @@
         self.holidayTwo.editable = NO;
         self.holidayTwo.bordered = NO;
         self.holidayTwo.drawsBackground = NO;
-        self.holidayTwo.font = [NSFont systemFontOfSize:36];
+        self.holidayTwo.font = [NSFont fontWithName:@"LanaPixel" size:36];
         self.holidayTwo.textColor = jikeY;
         self.holidayTwo.alignment = NSTextAlignmentCenter;
         [self addSubview: self.holidayTwo];
@@ -239,7 +262,7 @@
         self.holidayThree.editable = NO;
         self.holidayThree.bordered = NO;
         self.holidayThree.drawsBackground = NO;
-        self.holidayThree.font = [NSFont systemFontOfSize:36];
+        self.holidayThree.font = [NSFont fontWithName:@"LanaPixel" size:36];
         self.holidayThree.textColor = jikeY;
         self.holidayThree.alignment = NSTextAlignmentCenter;
         [self addSubview: self.holidayThree];
@@ -249,7 +272,7 @@
         self.holidayFour.editable = NO;
         self.holidayFour.bordered = NO;
         self.holidayFour.drawsBackground = NO;
-        self.holidayFour.font = [NSFont systemFontOfSize:36];
+        self.holidayFour.font = [NSFont fontWithName:@"LanaPixel" size:36];
         self.holidayFour.textColor = jikeY;
         self.holidayFour.alignment = NSTextAlignmentCenter;
         [self addSubview: self.holidayFour];
@@ -269,7 +292,7 @@
             NSString *workTime =  dict[@"workTime"];
             NSArray *holidayList = dict[@"data"];
             dispatch_sync(dispatch_get_main_queue(), ^{
-                self.canDoText.stringValue = workTime;
+//                self.canDoText.stringValue = workTime;
                 int dataCount = [holidayList count];
                 if (dataCount >= 1) {
                     self.holidayOne.stringValue = [NSString stringWithFormat:@"%@ | %@天假期 | 还有%@天",holidayList[0][@"name"], holidayList[0][@"length"],holidayList[0][@"fromNow"]];

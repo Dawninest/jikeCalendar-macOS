@@ -9,15 +9,28 @@
 /* Begin PBXBuildFile section */
 		0FCA8BB3288511DE00C5E873 /* holidaySaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FCA8BB2288511DE00C5E873 /* holidaySaverView.h */; };
 		0FCA8BB5288511DE00C5E873 /* holidaySaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCA8BB4288511DE00C5E873 /* holidaySaverView.m */; };
-		0FCA8BC82885671D00C5E873 /* LanaPixel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA8BC72885671D00C5E873 /* LanaPixel.ttf */; };
+		0FCA8BF02887EE4600C5E873 /* LanaPixel.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0FCA8BEF2887EE4600C5E873 /* LanaPixel.ttf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0FCA8BEE2887EE3200C5E873 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = font;
+			dstSubfolderSpec = 7;
+			files = (
+				0FCA8BF02887EE4600C5E873 /* LanaPixel.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0FCA8BAF288511DE00C5E873 /* holidaySaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = holidaySaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FCA8BB2288511DE00C5E873 /* holidaySaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = holidaySaverView.h; sourceTree = "<group>"; };
 		0FCA8BB4288511DE00C5E873 /* holidaySaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = holidaySaverView.m; sourceTree = "<group>"; };
 		0FCA8BC628854ED500C5E873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0FCA8BC72885671D00C5E873 /* LanaPixel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LanaPixel.ttf; path = font/LanaPixel.ttf; sourceTree = SOURCE_ROOT; };
+		0FCA8BEF2887EE4600C5E873 /* LanaPixel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LanaPixel.ttf; path = font/LanaPixel.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +47,7 @@
 		0FCA8BA5288511DE00C5E873 = {
 			isa = PBXGroup;
 			children = (
+				0FCA8BEF2887EE4600C5E873 /* LanaPixel.ttf */,
 				0FCA8BB1288511DE00C5E873 /* holidaySaver */,
 				0FCA8BB0288511DE00C5E873 /* Products */,
 			);
@@ -52,7 +66,6 @@
 			children = (
 				0FCA8BC628854ED500C5E873 /* Info.plist */,
 				0FCA8BB2288511DE00C5E873 /* holidaySaverView.h */,
-				0FCA8BC72885671D00C5E873 /* LanaPixel.ttf */,
 				0FCA8BB4288511DE00C5E873 /* holidaySaverView.m */,
 			);
 			path = holidaySaver;
@@ -80,6 +93,7 @@
 				0FCA8BAB288511DE00C5E873 /* Sources */,
 				0FCA8BAC288511DE00C5E873 /* Frameworks */,
 				0FCA8BAD288511DE00C5E873 /* Resources */,
+				0FCA8BEE2887EE3200C5E873 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -127,7 +141,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FCA8BC82885671D00C5E873 /* LanaPixel.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

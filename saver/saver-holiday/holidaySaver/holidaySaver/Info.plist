@@ -3,10 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>ATSApplicationFontsPath</key>
-	<string>./font</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>LanaPixel.ttf</string>
-	</array>
+	<string>font</string>
 </dict>
 </plist>
